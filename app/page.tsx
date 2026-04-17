@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { prisma } from "@/lib/prisma";
 import ListingCard from "@/components/ListingCard";
 import { CITIES } from "@/lib/utils";
@@ -32,28 +33,38 @@ export default async function HomePage() {
 
   return (
     <div>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-green-700 to-green-900 text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            Find Land for Sale in<br />Vadodara &amp; Gujarat
+      {/* Hero with background image */}
+      <section className="relative text-white py-24 px-4 overflow-hidden min-h-[480px] flex items-center">
+        <Image
+          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80&auto=format&fit=crop"
+          alt="Green farmland at golden hour"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-green-900/85 via-green-800/70 to-green-700/50" />
+
+        <div className="relative max-w-4xl mx-auto text-center w-full">
+          <p className="text-green-300 text-sm font-semibold uppercase tracking-widest mb-3">Gujarat&apos;s Land Marketplace</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-sm">
+            Buy &amp; Sell Land in<br />Vadodara &amp; Gujarat
           </h1>
-          <p className="text-green-100 text-lg mb-8">
+          <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
             Agricultural, residential &amp; commercial land across Vadodara, Anand, Nadiad,
-            Ahmedabad, Surat &amp; Bharuch
+            Ahmedabad, Surat &amp; Bharuch — free listing for owners
           </p>
 
           <form action="/listings" method="GET" className="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto">
             <select
               name="city"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-green-400"
+              className="flex-1 px-4 py-3 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-green-400 bg-white/95"
             >
               <option value="">All Cities</option>
               {CITIES.map((c) => <option key={c} value={c}>{c}</option>)}
             </select>
             <select
               name="landType"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-green-400"
+              className="flex-1 px-4 py-3 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-green-400 bg-white/95"
             >
               <option value="">All Land Types</option>
               <option value="AGRICULTURAL">Agricultural</option>
@@ -65,7 +76,7 @@ export default async function HomePage() {
             </select>
             <button
               type="submit"
-              className="bg-amber-500 hover:bg-amber-400 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+              className="bg-amber-500 hover:bg-amber-400 text-white px-8 py-3 rounded-lg font-semibold transition-colors shadow-lg"
             >
               Search
             </button>
@@ -143,17 +154,26 @@ export default async function HomePage() {
       )}
 
       {/* CTA */}
-      <section className="bg-green-50 border-t border-green-100 py-16 px-4 text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-3">Want to Sell Your Land?</h2>
-        <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-          List your agricultural, residential, or commercial land for free. Reach thousands of buyers across Gujarat.
-        </p>
-        <Link
-          href="/list-property"
-          className="inline-block bg-green-600 text-white px-8 py-3 rounded-xl font-semibold text-lg hover:bg-green-700 transition-colors"
-        >
-          List Your Land — It&apos;s Free
-        </Link>
+      <section className="relative py-20 px-4 text-center overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1600&q=80&auto=format&fit=crop"
+          alt="Open farmland"
+          fill
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-green-900/80" />
+        <div className="relative">
+          <h2 className="text-3xl font-bold text-white mb-3">Want to Sell Your Land?</h2>
+          <p className="text-green-100 mb-6 max-w-xl mx-auto">
+            List your agricultural, residential, or commercial land for free. Reach thousands of buyers across Gujarat.
+          </p>
+          <Link
+            href="/list-property"
+            className="inline-block bg-amber-500 hover:bg-amber-400 text-white px-8 py-3 rounded-xl font-semibold text-lg transition-colors shadow-lg"
+          >
+            List Your Land — It&apos;s Free
+          </Link>
+        </div>
       </section>
     </div>
   );

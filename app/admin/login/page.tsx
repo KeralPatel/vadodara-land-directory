@@ -38,7 +38,7 @@ export default function AdminLoginPage() {
         <div className="text-center mb-8">
           <div className="text-4xl mb-2">🔐</div>
           <h1 className="text-2xl font-bold text-gray-900">Admin Login</h1>
-          <p className="text-sm text-gray-500 mt-1">VadodaraLand Admin Panel</p>
+          <p className="text-sm text-gray-500 mt-1">Lands N Trade Admin Panel</p>
         </div>
 
         <form onSubmit={handleSubmit} className="bg-white border border-gray-200 rounded-2xl p-6 space-y-4">
@@ -49,7 +49,7 @@ export default function AdminLoginPage() {
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder="admin@vadodaraland.in"
+              placeholder="admin@landsntrade.in"
             />
           </div>
           <div>

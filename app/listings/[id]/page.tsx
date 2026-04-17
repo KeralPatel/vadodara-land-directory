@@ -159,7 +159,7 @@ export default async function ListingDetailPage({ params }: Props) {
             </div>
             <EnquiryForm listingId={listing.id} listingTitle={listing.title} />
             <p className="text-xs text-center text-gray-400">
-              Brokerage handled by VadodaraLand team
+              Brokerage handled by Lands N Trade team
             </p>
           </div>
         </div>

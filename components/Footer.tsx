@@ -8,10 +8,10 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <span className="text-2xl">🏡</span>
-              <span className="font-bold text-lg text-white">VadodaraLand</span>
+              <span className="font-bold text-lg text-white">Lands N Trade</span>
             </div>
             <p className="text-sm leading-relaxed">
-              Gujarat&apos;s trusted land directory. Connecting buyers, sellers, and
+              Gujarat&apos;s trusted land marketplace. Connecting buyers, sellers, and
               investors across Vadodara and surrounding cities.
             </p>
           </div>
@@ -40,7 +40,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-6 text-sm text-center text-gray-500">
-          © {new Date().getFullYear()} VadodaraLand. All rights reserved. Brokerage services provided.
+          © {new Date().getFullYear()} Lands N Trade. All rights reserved. Brokerage services provided.
         </div>
       </div>
     </footer>

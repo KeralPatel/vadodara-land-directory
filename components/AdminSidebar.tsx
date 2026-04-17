@@ -22,7 +22,7 @@ export default function AdminSidebar({ email }: { email: string }) {
   return (
     <aside className="w-56 bg-gray-900 text-white flex flex-col min-h-screen">
       <div className="p-5 border-b border-gray-700">
-        <div className="font-bold text-lg">🏡 VadodaraLand</div>
+        <div className="font-bold text-lg">🏡 Lands N Trade</div>
         <div className="text-xs text-gray-400 mt-1">Admin Panel</div>
       </div>
 

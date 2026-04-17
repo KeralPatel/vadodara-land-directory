@@ -4,11 +4,11 @@ import { CITIES } from "@/lib/utils";
 export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold text-gray-900 mb-4">About VadodaraLand</h1>
+      <h1 className="text-3xl font-bold text-gray-900 mb-4">About Lands N Trade</h1>
 
       <div className="prose prose-gray max-w-none space-y-6 text-gray-700 leading-relaxed">
         <p className="text-lg">
-          VadodaraLand is Gujarat&apos;s trusted land directory — connecting farmers, landowners, and
+          Lands N Trade is Gujarat&apos;s trusted land marketplace — connecting farmers, landowners, and
           investors with serious buyers across Vadodara, Anand, Nadiad, Ahmedabad, Surat, and Bharuch.
         </p>
 
@@ -58,8 +58,8 @@ export default function AboutPage() {
           <h2 className="text-xl font-semibold text-gray-900 mb-2">Contact Us</h2>
           <p className="text-sm text-gray-600">
             For any queries, reach us at{" "}
-            <a href="mailto:info@vadodaraland.in" className="text-green-700 hover:underline">
-              info@vadodaraland.in
+            <a href="mailto:info@landsntrade.in" className="text-green-700 hover:underline">
+              info@landsntrade.in
             </a>
           </p>
         </div>

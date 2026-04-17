@@ -13,7 +13,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-2">
             <span className="text-2xl">🏡</span>
             <span className="font-bold text-lg text-green-700">
-              VadodaraLand
+              Lands N Trade
             </span>
           </Link>
 

@@ -4,9 +4,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Vadodara Land Directory — Buy & Sell Land in Gujarat",
+  title: "Lands N Trade — Buy & Sell Land in Gujarat",
   description:
-    "Find agricultural, residential, and commercial land for sale in Vadodara, Anand, Nadiad, Ahmedabad, Surat, and Bharuch. List your land for free.",
+    "Find agricultural, residential, and commercial land for sale in Vadodara, Anand, Nadiad, Ahmedabad, Surat, and Bharuch. List your land for free on Lands N Trade.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
