@@ -1,0 +1,90 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Listing {
+  id           String        @id @default(cuid())
+  title        String
+  description  String?
+  city         String
+  taluka       String?
+  village      String?
+  landType     LandType
+  areaValue    Float
+  areaUnit     AreaUnit
+  priceTotal   Float?
+  pricePerUnit Float?
+  roadAccess   Boolean       @default(false)
+  waterSource  String?
+  latitude     Float?
+  longitude    Float?
+  images       String[]
+  ownerName    String
+  ownerPhone   String
+  ownerEmail   String?
+  status       ListingStatus @default(PENDING)
+  featured     Boolean       @default(false)
+  verified     Boolean       @default(false)
+  adminNotes   String?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  enquiries    Enquiry[]
+}
+
+model Enquiry {
+  id        String        @id @default(cuid())
+  listingId String
+  listing   Listing       @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  name      String
+  phone     String
+  email     String?
+  message   String?
+  status    EnquiryStatus @default(NEW)
+  adminNote String?
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
+
+enum LandType {
+  AGRICULTURAL
+  NA_RESIDENTIAL
+  NA_COMMERCIAL
+  INDUSTRIAL
+  FARM_HOUSE
+  PLOT
+}
+
+enum AreaUnit {
+  BIGHA
+  ACRE
+  GUNTHA
+  SQ_FT
+  SQ_METER
+  HECTARE
+}
+
+enum ListingStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  SOLD
+}
+
+enum EnquiryStatus {
+  NEW
+  CONTACTED
+  NEGOTIATING
+  DEAL_CLOSED
+  NO_RESPONSE
+}
